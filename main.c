@@ -4,8 +4,7 @@
 
 int	ft_printf1(const char *test, ...)
 {
-	printf(test, 'A', "LOUCO", 0, 56, 10, 15, 556, 540);
-	return (0);
+	return (printf(test, 'A', "LOUCO", 0, 56, 10, 15, 556, 540));
 }
 
 int	ft_printf2(const char *test, ...)
@@ -19,10 +18,10 @@ int	main(void)
 	char *test1;
 	char *test2;
 
-	test1 = "PEDRO :\n %c\n%s\n%p\n%d\n%i\n%u\n%x\n%X\n%%";
-	test2 = "%c\n%s\n%p\n%d\n%i\n%u\n%x\n%X\n%%";
+	test1 = "PEDRO:\n %c\n%s\n%p\n%d\n%i\n%u\n%x\n%X\n%%\n";
+	test2 = "%c\n%s\n%p\n%d\n%i\n%u\n%x\n%X\n%%\n";
 	printf("\nTEST 1:\n");
-	ft_printf1(test1);
+	printf("%d\n",ft_printf1(test1));
 	printf("\n\nTEST 2: \n\n");
 	ft_printf2(test2);
 	printf("\n");
