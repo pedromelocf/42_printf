@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <stdarg.h>
+#include "ft_printf.h"
 
 int	ft_printf1(const char *test, ...)
 {
@@ -10,19 +8,6 @@ int	ft_printf1(const char *test, ...)
 int	ft_printf2(const char *test, ...)
 {
 	printf(test, 'a' , "aaaaaa" , test, 9, 'b', 'a', 'a', 'a');
-	return (0);
-}
-
-int	ft_printf(const char *str, ...)
-{
-	int i;
-
-	i = 0;
-	while(str[i] != '\0')
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
 	return (0);
 }
 
