@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:51:05 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/25 14:53:09 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:28:52 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,6 @@
 # include <stdarg.h>
 # include <unistd.h>
 
-int	ft_printf(const char *, ...);
+int	ft_printf(const char *str, ...);
 
 #endif
