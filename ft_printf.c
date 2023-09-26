@@ -6,7 +6,21 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/25 14:50:50 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/09/26 16:32:05 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
+
+int	ft_printf(const char *str, ...)
+{
+	int i;
+
+	i = 0;
+	while(str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (0);
+}
