@@ -13,17 +13,34 @@ int	ft_printf2(const char *test, ...)
 	return (0);
 }
 
+int	ft_printf(const char *str, ...)
+{
+	int i;
+
+	i = 0;
+	while(str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return (0);
+}
+
 int	main(void)
 {
 	const char *test1;
 	const char *test2;
+	const char *test3;
 
 	test1 = "PEDRO:\n%c\n%s\n%p\n%d\n%i\n%u\n%x\n%X\n%%\n";
 	test2 = "%c\n%s\n%p\n%d\n%i\n%u\n%x\n%X\n%%\n";
+	test3 = "PEDRO";
 	printf("\nTEST 1:\n");
 	printf("%d\n",ft_printf1(test1));
 	printf("\nTEST 2: \n");
 	ft_printf2(test2);
+	printf("\n");
+	ft_printf(test3);
 	printf("\n");
 	return 0;
 }
