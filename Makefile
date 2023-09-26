@@ -4,14 +4,14 @@ SRCS = ft_printf.c
 
 OBJ = $(SRCS:.c=.o)
 INCLUDES = ft_printf.h
-FLAGS = -Wall -Weror -Wextra
+FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 
 %.o: %.c ft_printf.h
-	$(CC) $(FLAGS) - c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 	ar rc $(NAME) $@
 
 clean :
