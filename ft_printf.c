@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/29 18:33:46 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/09/29 18:36:51 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	ft_printf(const char *str, ...)
 		if (str[i] == '%')
 		{
 			i++;
+			if (str[i] == '#' || str[i] == '+' || str[i] == ' ')
+				i++;
 			if (str[i] == 'c')
 				putchar('c');
 			else if (str[i] == 's')
