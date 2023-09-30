@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_dec_to_hex.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:44:22 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/29 18:26:39 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/09/30 15:48:08 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_dec_to_hex(int nbr)
+void	ft_putnbr_base(int nbr, char *base)
 {
-	char	*base;
 	char	hexnumber[50];
 	int		index;
 	int		reminder;
+	int		base_len;
 
-	base = "0123456789abcdef";
+	base_len = strlen(base);
 	index = 0;
 	while (nbr > 0)
 	{
-		reminder = nbr % 16;
+		reminder = nbr % base_len;
 		hexnumber[index++] = base[reminder];
-		nbr /= 16;
+		nbr /= base_len;
 	}
 	return ;
+}
+int	main(void)
+{
+	ft_putnbr_base(496, "01");
+	return (0);
 }
