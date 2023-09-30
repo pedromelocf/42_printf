@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/30 16:45:56 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/09/30 16:54:04 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,21 +28,21 @@ int	ft_printf(const char *str, ...)
 			if (str[i] == '#' || str[i] == '+' || str[i] == ' ')
 				i++;
 			if (str[i] == 'c')
-				write(1, str[i], 1);
+				lenght += putchar();
 			else if (str[i] == 's')
-				putstring;
+				lenght += putstring;
 			else if (str[i] == 'p')
-				
+				lenght += ;
 			else if (str[i] == 'd' || str[i] == 'i')
-				putnumber;
+				lenght += putnbr;
 			else if (str[i] == 'u')
-				putnumber;
+				lenght += putnbr;
 			else if (str[i] == 'x')
-				ft_putnbr_base();
+				lenght += ft_putnbr_base();
 			else if (str[i] == 'X')
-				ft_putnbr_base();
+				lenght += ft_putnbr_base();
 			else if (str[i] == '%')
-				write(1, '%', 1);
+				lenght += putchar(%);
 		}
 		else
 			write(1, &str[i], 1);
