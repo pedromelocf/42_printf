@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/30 17:12:08 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/09/30 17:18:22 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ int	ft_printf(const char *str, ...)
 			if (str[i] == 'c')
 				length += ft_putchar(va_arg(args, char));
 			else if (str[i] == 's')
-				length += ft_putstr(va_arg(args, char*));
+				length += ft_putstr(va_arg(args, char *));
 			else if (str[i] == 'p')
 				length += ;
 			else if (str[i] == 'd' || str[i] == 'i')
-				length += putnbr;
+				length += ft_putnbr(va_arg(args, int));
 			else if (str[i] == 'u')
-				length += putnbr;
+				length += ft_putnbr(va_arg(args, unsigned int));
 			else if (str[i] == 'x')
 				length += ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
 			else if (str[i] == 'X')

@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:51:05 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/30 17:07:57 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/09/30 17:17:27 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,6 @@ int		ft_printf(const char *str, ...);
 void	ft_putnbr_base(int nbr, char *base);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	ft_putnbr(int nb);
 
 #endif
