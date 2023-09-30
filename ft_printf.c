@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/30 16:54:04 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/09/30 16:58:50 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_printf(const char *str, ...)
 
 	i = 0;
 	length = 0;
+	va_start(args, str);
 	while (str[i])
 	{
 		if (str[i] == '%')
@@ -28,24 +29,24 @@ int	ft_printf(const char *str, ...)
 			if (str[i] == '#' || str[i] == '+' || str[i] == ' ')
 				i++;
 			if (str[i] == 'c')
-				lenght += putchar();
+				length += putchar();
 			else if (str[i] == 's')
-				lenght += putstring;
+				length += putstring;
 			else if (str[i] == 'p')
-				lenght += ;
+				length += ;
 			else if (str[i] == 'd' || str[i] == 'i')
-				lenght += putnbr;
+				length += putnbr;
 			else if (str[i] == 'u')
-				lenght += putnbr;
+				length += putnbr;
 			else if (str[i] == 'x')
-				lenght += ft_putnbr_base();
+				length += ft_putnbr_base();
 			else if (str[i] == 'X')
-				lenght += ft_putnbr_base();
+				length += ft_putnbr_base();
 			else if (str[i] == '%')
-				lenght += putchar(%);
+				length += putchar('%');
 		}
 		else
-			write(1, &str[i], 1);
+			putchar(str[i]);
 	}
 	va_end(args);
 	return (length);
