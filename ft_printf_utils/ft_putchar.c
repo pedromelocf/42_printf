@@ -6,13 +6,14 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 16:58:27 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/30 17:20:14 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/09/30 17:32:25 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-void	ft_putchar(char c)
+int	ft_putchar(char c)
 {
 	write(1, &c, 1);
+	return (1);
 }
