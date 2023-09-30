@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/30 17:33:51 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/09/30 17:39:40 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_printf(const char *str, ...)
 			if (str[i] == '#' || str[i] == '+' || str[i] == ' ')
 				i++;
 			if (str[i] == 'c')
-				length += ft_putchar(va_arg(args, char));
+				length += ft_putchar(va_arg(args, int));
 			else if (str[i] == 's')
 				length += ft_putstr(va_arg(args, char *));
 			else if (str[i] == 'p')
@@ -50,4 +50,9 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (length);
+}
+int	main(void)
+{
+	ft_printf("%s", "Pedro");
+	return (1);
 }

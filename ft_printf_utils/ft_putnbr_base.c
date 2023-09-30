@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:44:22 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/30 17:31:36 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/09/30 17:43:22 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ int	ft_putnbr_base(int nbr, char *base)
 	}
 	while (index > 0)
 		write(1, &hexnumber[--index], 1);
-	return ;
+	return (base_len);
 }
-int	main(void)
-{
-	ft_putnbr_base(495, "0123456789ABCDEF");
-	return (0);
-}
+// int	main(void)
+// {
+// 	ft_putnbr_base(495, "0123456789ABCDEF");
+// 	return (0);
+// }
