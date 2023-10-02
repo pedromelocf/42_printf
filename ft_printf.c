@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/02 16:29:14 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/02 19:42:04 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_printf(const char *str, ...)
 			else if (str[i] == 'd' || str[i] == 'i')
 				length += ft_putnbr(va_arg(args, int));
 			else if (str[i] == 'u')
-				length += ft_putnbr(va_arg(args, unsigned int));
+				length += ft_put_unsigned(va_arg(args, unsigned int));
 			else if (str[i] == 'x')
 				length += ft_putnbr_base(va_arg(args, int), "0123456789abcdef");
 			else if (str[i] == 'X')
@@ -64,8 +64,8 @@ int	main(void)
 	printf("Original: %d\n\n", 42);
 	ft_printf("Minha funçao: %i\n", 42);
 	printf("Original: %i\n\n", 42);
-	ft_printf("Minha funçao: %u\n", -40);
-	printf("Original: %u\n\n", -40);
+	ft_printf("Minha funçao: %u\n", -56);
+	printf("Original: %u\n\n", -56);
 	ft_printf("Minha funçao: %x\n", 495);
 	printf("Original: %x\n\n", 495);
 	ft_printf("Minha funçao: %X\n", 495);
