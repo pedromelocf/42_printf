@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/02 15:57:19 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/02 16:29:14 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,23 @@ int	ft_printf(const char *str, ...)
 }
 int	main(void)
 {
-	ft_printf("%x\n", 42);
-	ft_printf("%p", "Pedro");
+	ft_printf("Minha funçao: %c\n", 'a');
+	printf("Original: %c\n\n", 'a');
+	ft_printf("Minha funçao: %s\n", "Pedro");
+	printf("Original: %s\n\n", "Pedro");
+	ft_printf("Minha funçao: %p\n", "Pedro");
+	printf("Original: %p\n\n", "Pedro");
+	ft_printf("Minha funçao: %d\n", 42);
+	printf("Original: %d\n\n", 42);
+	ft_printf("Minha funçao: %i\n", 42);
+	printf("Original: %i\n\n", 42);
+	ft_printf("Minha funçao: %u\n", -40);
+	printf("Original: %u\n\n", -40);
+	ft_printf("Minha funçao: %x\n", 495);
+	printf("Original: %x\n\n", 495);
+	ft_printf("Minha funçao: %X\n", 495);
+	printf("Original: %X\n\n", 495);
+	ft_printf("Minha funçao: %%\n");
+	printf("Original: %%\n\n");
 	return (1);
 }
