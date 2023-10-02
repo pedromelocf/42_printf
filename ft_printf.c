@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/02 14:57:51 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/02 15:57:19 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	ft_printf(const char *str, ...)
 				length += ft_putchar('%');
 		}
 		else
-			length += putchar(str[i]);
+			length += ft_putchar(str[i]);
 		i++;
 	}
 	va_end(args);
@@ -54,6 +54,7 @@ int	ft_printf(const char *str, ...)
 }
 int	main(void)
 {
-	ft_printf("%c%d%s%x%X%%", 'e', 42, "Hello World!", 42, 42);
+	ft_printf("%x\n", 42);
+	ft_printf("%p", "Pedro");
 	return (1);
 }

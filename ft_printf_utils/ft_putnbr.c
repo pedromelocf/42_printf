@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 17:00:24 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/09/30 17:45:03 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/02 14:51:42 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ int	ft_putnbr(int nb)
 		ft_putnbr(nb / 10);
 		ft_putnbr(nb % 10);
 	}
-	return (lenght);
+	return (0);
 }
