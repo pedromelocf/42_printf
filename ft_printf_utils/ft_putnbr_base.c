@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:44:22 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/02 19:56:34 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/03 16:09:45 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	ft_putnbr_base(int nbr, char *base)
 	while (index > 0)
 		write(1, &hexnumber[--index], 1);
 	base_len = ft_strlen(hexnumber);
+	hexnumber = NULL;
 	free(hexnumber);
 	return (base_len);
 }
