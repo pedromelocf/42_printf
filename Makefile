@@ -1,5 +1,7 @@
 NAME = libftprintf.a
 
+LIBFT_DIR = libft
+
 SRCS = ft_printf.c \
 	ft_printf_utils/ft_intlen.c \
 	ft_printf_utils/ft_put_unsigned.c \
@@ -16,15 +18,20 @@ FLAGS = -Wall -Werror -Wextra
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	make -C $(LIBFT_DIR)
+	cp $(LIBFT_DIR)/libft.a $(NAME)
+	ar rc $(NAME) $(OBJ)
 
 %.o: %.c ft_printf.h
 	$(CC) $(FLAGS) -c $< -o $@
 	ar rc $(NAME) $@
 
 clean :
+	make -C $(LIBFT_DIR) clean
 	rm -f $(OBJ)
 
 fclean : clean
+	make -C $(LIBFT_DIR) fclean
 	rm -f $(NAME)
 
 re : fclean all

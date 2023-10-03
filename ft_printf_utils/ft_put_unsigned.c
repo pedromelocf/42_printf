@@ -1,6 +1,6 @@
 #include "../ft_printf.h"
 
-int	ft_put_unsigned(unsigned int nb)
+int	ft_put_unsigned(int nb)
 {
 	int length;
 

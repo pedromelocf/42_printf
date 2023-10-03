@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/03 16:24:31 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/03 19:54:14 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_printf(const char *str, ...)
 				length += ft_putnbr(va_arg(args, int));
 			}
 			if (str[i] == 'u')
-				length += ft_put_unsigned(va_arg(args, unsigned int));
+				length += ft_put_unsigned(va_arg(args, int));
 			if (str[i] == 'x')
 			{
 				if (str[i - 1] == '#')
@@ -93,8 +93,8 @@ int	main(void)
     ret_orig = printf("%i\n", 0);
     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft, ret_orig);
 
-    ret_ft = ft_printf("%u\n", 35);
-    ret_orig = printf("%u\n", 35);
+    ret_ft = ft_printf("%u\n", -35);
+    ret_orig = printf("%u\n", -35);
     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft, ret_orig);
 
     ret_ft = ft_printf("%#x\n", 18);
@@ -121,5 +121,21 @@ int	main(void)
     ret_orig = printf("%X\n", 50);
     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft, ret_orig);
 
-    return (0);
+    ret_ft = ft_printf("%+d\n", 12345);
+    ret_orig = printf("%+d\n", 12345);
+    printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft, ret_orig);
+
+    ret_ft = ft_printf("% d\n", 12345);
+    ret_orig = printf("% d\n", 12345);
+    printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft, ret_orig);
+
+    ret_ft = ft_printf("%#x\n", 18);
+    ret_orig = printf("%#x\n", 18);
+    printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft, ret_orig);
+
+    ret_ft = ft_printf("%#X\n", 50);
+    ret_orig = printf("%#X\n", 50);
+    printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft, ret_orig);
+
+    return 0;
 }
