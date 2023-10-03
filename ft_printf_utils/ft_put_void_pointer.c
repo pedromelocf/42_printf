@@ -8,7 +8,7 @@ int ft_put_voidpointer(char *str)
 		return (ft_putstr("(nil)"));
 	length = 0;
 	length += ft_putstr("0x");
-	length += ft_putnbr_base((unsigned long long int)*str, "0123456789ABCDEF");
+	length += ft_putnbr_base((unsigned long long int)str, "0123456789ABCDEF");
 	return (length);
 }
 // int main (void)
