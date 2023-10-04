@@ -11,8 +11,3 @@ int ft_put_voidpointer(char *str)
 	length += ft_putnbr_base((unsigned long long int)str, "0123456789ABCDEF");
 	return (length);
 }
-// int main (void)
-// {
-// 	ft_put_adress("Pedro");
-// 	return (0);
-// }
