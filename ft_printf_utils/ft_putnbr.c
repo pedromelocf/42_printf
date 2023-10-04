@@ -6,34 +6,39 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 17:00:24 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/02 20:56:44 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:25:50 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putnbr(int nb)
+int	ft_putnbr_recursive(int nb, int *length)
 {
-	int length;
-
-	length = 0;
 	if (nb < 0)
 	{
-		length += ft_putchar('-');
+		*length += ft_putchar('-');
 		if (nb == -2147483648)
 		{
-			ft_putchar('2');
+			*length += ft_putchar('2');
 			nb += 2000000000;
 		}
 		nb *= -1;
 	}
 	if (nb < 10)
-		ft_putchar(nb + '0');
+		*length += ft_putchar(nb + '0');
 	else
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr_recursive(nb / 10, length);
+		ft_putnbr_recursive(nb % 10, length);
 	}
-	length += ft_intlen(nb);
+	return (*length);
+}
+
+int	ft_putnbr(int nb)
+{
+	int	length;
+
+	length = 0;
+	ft_putnbr_recursive(nb, &length);
 	return (length);
 }

@@ -1,8 +1,8 @@
 #include "../ft_printf.h"
 
-int ft_put_voidpointer(char *str)
+int	ft_put_voidpointer(char *str)
 {
-	int length;
+	int	length;
 
 	length = 0;
 	if (!str)
