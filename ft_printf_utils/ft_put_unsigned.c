@@ -8,12 +8,12 @@ int	ft_put_unsigned(long int nb)
 	length = 0;
 	if (nb < 0)
 		nb = 4294967295 + nb + 1;
-	if ((nb < 10) && (nb >= 0))
+	if (nb < 10)
 		ft_putchar(nb + '0');
 	else
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		length += ft_putnbr(nb / 10);
+		length += ft_putnbr(nb % 10);
 	}
 	return (length);
 }
