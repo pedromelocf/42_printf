@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/04 18:25:25 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/04 19:19:27 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	ft_printf(const char *str, ...)
 			if (str[i] == 'X')
 			{
 				if (str[i - 1] == '#')
-					length += ft_putstr("0x");
+					length += ft_putstr("0X");
 				length += ft_putnbr_base(va_arg(args, unsigned int),
 						"0123456789ABCDEF");
 			}
