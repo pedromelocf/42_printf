@@ -3,7 +3,6 @@ NAME = libftprintf.a
 LIBFT_DIR = libft
 
 SRCS = ft_printf.c \
-	ft_printf_utils/ft_intlen.c \
 	ft_printf_utils/ft_put_unsigned.c \
 	ft_printf_utils/ft_put_void_pointer.c \
 	ft_printf_utils/ft_putchar.c \
