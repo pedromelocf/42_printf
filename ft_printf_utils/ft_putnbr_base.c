@@ -6,13 +6,13 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:44:22 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/04 17:58:49 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/04 18:20:34 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putnbr_base(unsigned int nbr, char *base)
+int	ft_putnbr_base(unsigned long int nbr, char *base)
 {
 	char			*hexnumber;
 	int				index;

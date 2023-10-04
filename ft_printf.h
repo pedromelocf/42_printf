@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:51:05 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/04 17:47:39 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/04 18:18:05 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <unistd.h>
 
 int	ft_printf(const char *str, ...);
-int	ft_putnbr_base(unsigned int nbr, char *base);
+int	ft_putnbr_base(unsigned long int nbr, char *base);
 int	ft_putchar(char c);
 int	ft_putstr(char *str);
 int	ft_putnbr(int nb);

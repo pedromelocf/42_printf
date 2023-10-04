@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 16:38:32 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/04 16:38:33 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/04 18:13:21 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,6 @@ int	ft_put_voidpointer(char *str)
 	if (!str)
 		return (ft_putstr("(nil)"));
 	length += ft_putstr("0x");
-	length += ft_putnbr_base((unsigned long long int)str, "0123456789ABCDEF");
+	length += ft_putnbr_base((unsigned long int)str, "0123456789abcdef");
 	return (length);
 }
