@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/29 15:44:22 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/04 13:23:49 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/04 16:07:44 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_putnbr_base(int nbr, char *base)
 	hexnumber = malloc(sizeof(char) * 32);
 	if (nbr < 0)
 	{
-		write(1, "-", 1);
+		ft_putchar('-');
 		nbr *= -1;
 	}
 	while (nbr > 0)
