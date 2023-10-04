@@ -35,4 +35,9 @@ fclean : clean
 
 re : fclean all
 
+bonus: $(OBJ)
+	make -C $(LIBFT_DIR)
+	cp $(LIBFT_DIR)/libft.a $(NAME)
+	ar rc $(NAME) $(OBJ)
+
 .PHONY: all clean fclean re
