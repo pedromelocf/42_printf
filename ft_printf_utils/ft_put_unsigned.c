@@ -3,7 +3,6 @@
 int	ft_put_unsigned(long int nb)
 {
 	int length;
-	long int i;
 
 	length = 0;
 	if (nb < 0)
