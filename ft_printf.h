@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:51:05 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/06 16:52:58 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/06 20:01:23 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int	ft_putnbr(int nb);
 int	ft_put_unsigned(long int nb);
 int	ft_put_voidpointer(char *str);
 int	ft_putnbr_bonus(int nb, const char *str, int i);
-int ft_putnbr_hex(unsigned long int nbr, const char *str, int i);
+int	ft_put_hex(unsigned long int nbr, const char *str, int i);
+int	ft_putnbr_hex(unsigned long int nbr, int index, char *base);
+int	ft_check_conversion(const char *str, int i, va_list args);
 
 #endif
