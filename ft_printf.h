@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:51:05 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/04 18:44:39 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/05 22:50:54 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	ft_putstr(char *str);
 int	ft_putnbr(int nb);
 int	ft_put_unsigned(long int nb);
 int	ft_put_voidpointer(char *str);
+int	ft_putnbr_bonus(int nb, const char *str, int i);
 
 #endif
