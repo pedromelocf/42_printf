@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/06 14:34:44 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/10/06 14:34:45 by pmelo-ca         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../ft_printf.h"
 
 int	ft_putnbr_recursive_bonus(int nb, int *length)
@@ -27,7 +39,7 @@ int	ft_putnbr_bonus(int nb, const char *str, int i)
 	int	length;
 
 	length = 0;
-	if (str[i - 1] == ' ' || str[i - 1] == '+' && nb >= 0)
+	if ((str[i - 1] == ' ' || str[i - 1] == '+') && (nb >= 0))
 		length += ft_putchar(str[i - 1]);
 	ft_putnbr_recursive_bonus(nb, &length);
 	return (length);

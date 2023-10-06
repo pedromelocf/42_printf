@@ -8,7 +8,9 @@ SRCS = ft_printf.c \
 	ft_printf_utils/ft_putchar.c \
 	ft_printf_utils/ft_putnbr_base.c \
 	ft_printf_utils/ft_putnbr.c \
-	ft_printf_utils/ft_putstr.c
+	ft_printf_utils/ft_putstr.c \
+	ft_printf_utils/ft_putnbr_bonus.c \
+	ft_printf_utils/ft_putnbr_hex.c
 
 OBJ = $(SRCS:.c=.o)
 INCLUDES = ft_printf.h
