@@ -27,7 +27,7 @@ int	ft_putnbr_bonus(int nb, const char *str, int i)
 	int	length;
 
 	length = 0;
-	if (str[i - 1] == ' ' || str[i - 1] == '+' && nb >= 0)
+	if ((str[i - 1] == ' ' || str[i - 1] == '+') && (nb >= 0))
 		length += ft_putchar(str[i - 1]);
 	ft_putnbr_recursive_bonus(nb, &length);
 	return (length);
