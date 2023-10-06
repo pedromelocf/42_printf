@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/04 19:19:27 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/05 22:38:15 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,11 +122,6 @@ int	ft_printf(const char *str, ...)
 
 // // //     ret_ft = ft_printf("%s\n", "OutroTeste");
 // // //     ret_orig = printf("%s\n", "OutroTeste");
-// // //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,
-// 		ret_orig);
-
-// // //     ret_ft = ft_printf("%d\n", 99999);
-// // //     ret_orig = printf("%d\n", 99999);
 // // //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,
 // 		ret_orig);
 
