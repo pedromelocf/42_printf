@@ -6,7 +6,7 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/05 22:54:06 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/06 14:51:18 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,8 @@ int	ft_printf(const char *str, ...)
 				length += ft_putnbr_bonus(va_arg(args, int), str, i);
 			if (str[i] == 'u')
 				length += ft_put_unsigned(va_arg(args, int));
-			if (str[i] == 'x')
-			{
-				if (str[i - 1] == '#')
-					length += ft_putstr("0x");
-				length += ft_putnbr_base(va_arg(args, unsigned int),
-						"0123456789abcdef");
-			}
-			if (str[i] == 'X')
-			{
-				if (str[i - 1] == '#')
-					length += ft_putstr("0X");
-				length += ft_putnbr_base(va_arg(args, unsigned int),
-						"0123456789ABCDEF");
-			}
+			if (str[i] == 'x' || str[i] == 'X')
+				length += ft_putnbr_hex(va_arg(args, unsigned int), str, i);
 			if (str[i] == '%')
 				length += ft_putchar('%');
 		}
@@ -62,78 +50,78 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (length);
 }
-int	main(void)
-{
-	int ret_ft;
-    int ret_orig;
+// int	main(void)
+// {
+// 	int ret_ft;
+//     int ret_orig;
 
-//     // Casos com conversões sem flags ou modificadores de largura
-//     ret_ft = ft_printf("%c\n", 'A');
-//     ret_orig = printf("%c\n", 'A');
+// //     // Casos com conversões sem flags ou modificadores de largura
+// //     ret_ft = ft_printf("%c\n", 'A');
+// //     ret_orig = printf("%c\n", 'A');
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+
+// //     ret_ft = ft_printf("%p\n", 10);
+// //     ret_orig = printf("%p\n", 10);
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+
+// //     ret_ft = ft_printf("%s\n", "Teste");
+// //     ret_orig = printf("%s\n", "Teste");
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+
+//     // ret_ft = ft_printf("%d\n", INT_MIN);
+//     // ret_orig = printf("%d\n", INT_MIN);
+//     // printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+
+// //     ret_orig = printf("%d\n", 12345);
+// //     printf("Retorno printf: %d\n\n", ret_orig);
+
+// //     ret_ft = ft_printf(" %i\n", 1);
+// //     ret_orig = printf(" %i\n", 1);
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+
+//     // ret_ft = ft_printf("%u\n", LONG_MIN);
+//     // ret_orig = printf("%u\n", LONG_MIN);
+//     // printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+
+//     ret_ft = ft_printf("%#x\n", -10);
+//     ret_orig = printf("%#x\n", -10);
 //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
 
-//     ret_ft = ft_printf("%p\n", 10);
-//     ret_orig = printf("%p\n", 10);
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+// //     ret_ft = ft_printf("%%\n");
+// //     ret_orig = printf("%%\n");
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
 
-//     ret_ft = ft_printf("%s\n", "Teste");
-//     ret_orig = printf("%s\n", "Teste");
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+// //     ret_ft = ft_printf("%c\n", 'Z');
+// //     ret_orig = printf("%c\n", 'Z');
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
 
-    // ret_ft = ft_printf("%d\n", INT_MIN);
-    // ret_orig = printf("%d\n", INT_MIN);
-    // printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+// //     ret_ft = ft_printf("%s\n", "OutroTeste");
+// //     ret_orig = printf("%s\n", "OutroTeste");
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
 
-//     ret_orig = printf("%d\n", 12345);
-//     printf("Retorno printf: %d\n\n", ret_orig);
+// //     ret_ft = ft_printf("%x\n", -1);
+// //     ret_orig = printf("%x\n", -1);
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
 
-//     ret_ft = ft_printf(" %i\n", 1);
-//     ret_orig = printf(" %i\n", 1);
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+// //     ret_ft = ft_printf("%+d\n", 12345);
+// //     ret_orig = printf("%+d\n", 12345);
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
 
-    // ret_ft = ft_printf("%u\n", LONG_MIN);
-    // ret_orig = printf("%u\n", LONG_MIN);
-    // printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+// //     ret_ft = ft_printf("% d\n", 12345);
+// //     ret_orig = printf("% d\n", 12345);
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
 
-    ret_ft = ft_printf("%+d\n", -10);
-    ret_orig = printf("%+d\n", -10);
-    printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+// //     ret_ft = ft_printf("%#x\n", 18);
+// //     ret_orig = printf("%#x\n", 18);
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
 
-//     ret_ft = ft_printf("%%\n");
-//     ret_orig = printf("%%\n");
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+// //     ret_ft = ft_printf("%#X\n", 50);
+// //     ret_orig = printf("%#X\n", 50);
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
 
-//     ret_ft = ft_printf("%c\n", 'Z');
-//     ret_orig = printf("%c\n", 'Z');
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
+// // 	ret_ft = ft_printf(" NULL %s NULL", NULL);
+// //     ret_orig = printf(" NULL %s NULL", NULL);
+// //     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
 
-//     ret_ft = ft_printf("%s\n", "OutroTeste");
-//     ret_orig = printf("%s\n", "OutroTeste");
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
-
-//     ret_ft = ft_printf("%x\n", -1);
-//     ret_orig = printf("%x\n", -1);
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
-
-//     ret_ft = ft_printf("%+d\n", 12345);
-//     ret_orig = printf("%+d\n", 12345);
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
-
-//     ret_ft = ft_printf("% d\n", 12345);
-//     ret_orig = printf("% d\n", 12345);
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
-
-//     ret_ft = ft_printf("%#x\n", 18);
-//     ret_orig = printf("%#x\n", 18);
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
-
-//     ret_ft = ft_printf("%#X\n", 50);
-//     ret_orig = printf("%#X\n", 50);
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
-
-// 	ret_ft = ft_printf(" NULL %s NULL", NULL);
-//     ret_orig = printf(" NULL %s NULL", NULL);
-//     printf("Retorno ft_printf: %d, Retorno printf: %d\n\n", ret_ft,ret_orig);
-
-    return (0);
-}
+//     return (0);
+// }
