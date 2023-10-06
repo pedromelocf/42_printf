@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_hex.c                                    :+:      :+:    :+:   */
+/*   ft_put_hex.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 14:34:37 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/06 19:50:36 by pmelo-ca         ###   ########.fr       */
+/*   Created: 2023/10/06 19:50:02 by pmelo-ca          #+#    #+#             */
+/*   Updated: 2023/10/06 19:50:51 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	ft_putnbr_hex(unsigned long int nbr, int index, char *base)
+int	ft_put_hex(unsigned long int nbr, const char *str, int i)
 {
-	unsigned int	reminder;
-	int				length;
-	char			*hexnumber;
+	int	index;
+	int	length;
 
 	length = 0;
-	hexnumber = malloc(sizeof(char) * 32);
-	while (nbr > 0)
+	index = 0;
+	if (nbr == 0)
+		return (ft_putchar('0'));
+	if (str[i] == 'x')
 	{
-		reminder = nbr % 16;
-		hexnumber[index++] = base[reminder];
-		nbr /= 16;
+		if (str[i - 1] == '#')
+			length = ft_putstr("0x");
+		length += ft_putnbr_hex(nbr, index, NONCAPHEX);
 	}
-	hexnumber[index] = '\0';
-	while (index > 0)
-		length += ft_putchar(hexnumber[--index]);
-	hexnumber[index] = '\0';
-	free(hexnumber);
+	if (str[i] == 'X')
+	{
+		if (str[i - 1] == '#')
+			length = ft_putstr("0X");
+		length += ft_putnbr_hex(nbr, index, CAPHEX);
+	}
 	return (length);
 }
