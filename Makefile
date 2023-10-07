@@ -23,7 +23,6 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	make -C $(LIBFT_DIR)
 	cp $(LIBFT_DIR)/libft.a $(NAME)
-	ar rc $(NAME) $(OBJ)
 
 %.o: %.c ft_printf.h
 	$(CC) $(FLAGS) -c $< -o $@
