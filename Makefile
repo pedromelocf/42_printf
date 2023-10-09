@@ -40,8 +40,7 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 %.o: %.c $(INCLUDES)
-	$(CC) $(FLAGS) -c $< -o $@
-	ar rc $(NAME) $@
+	$(CC) $(FLAGS) -Ift_printf_utils/includes -c $< -o $@
 
 clean :
 	make -C $(LIBFT_DIR) clean
@@ -54,6 +53,8 @@ fclean : clean
 re : fclean all
 
 bonus: $(BONUS_OBJ)
+	make -C $(LIBFT_DIR)
+	cp $(LIBFT_DIR)/libft.a $(NAME)
 	ar rc $(NAME) $(BONUS_OBJ)
 
 .PHONY: all clean fclean re bonus
