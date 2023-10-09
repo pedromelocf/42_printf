@@ -16,7 +16,7 @@ SRCS = ft_printf_utils/ft_check_conversion.c \
 BONUS_SRCS = \
 	ft_printf_utils_bonus/ft_printf_bonus.c \
 	ft_printf_utils_bonus/ft_put_unsigned_bonus.c \
-	ft_printf_utils_bonus/ft_put_void_pointer_bonus.c \
+	ft_printf_utils_bonus/ft_put_voidpointer_bonus.c \
 	ft_printf_utils_bonus/ft_putchar_bonus.c \
 	ft_printf_utils_bonus/ft_putnbr_base_bonus.c \
 	ft_printf_utils_bonus/ft_putnbr_bonus.c \
