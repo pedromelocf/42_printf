@@ -6,30 +6,30 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/30 17:00:24 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/09 14:44:56 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/09 15:04:54 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf_bonus.h"
 
-int	ft_putnbr_recursive(int nb, int *length)
+int	ft_putnbr_recursive_bonus(int nb, int *length)
 {
 	if (nb < 0)
 	{
-		*length += ft_putchar('-');
+		*length += ft_putchar_bonus('-');
 		if (nb == -2147483648)
 		{
-			*length += ft_putchar('2');
+			*length += ft_putchar_bonus('2');
 			nb += 2000000000;
 		}
 		nb *= -1;
 	}
 	if (nb < 10)
-		*length += ft_putchar(nb + '0');
+		*length += ft_putchar_bonus(nb + '0');
 	else
 	{
-		ft_putnbr_recursive(nb / 10, length);
-		ft_putnbr_recursive(nb % 10, length);
+		ft_putnbr_recursive_bonus(nb / 10, length);
+		ft_putnbr_recursive_bonus(nb % 10, length);
 	}
 	return (*length);
 }
@@ -39,6 +39,6 @@ int	ft_putnbr_bonus(int nb)
 	int	length;
 
 	length = 0;
-	ft_putnbr_recursive(nb, &length);
+	ft_putnbr_recursive_bonus(nb, &length);
 	return (length);
 }
