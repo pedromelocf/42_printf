@@ -2,20 +2,34 @@ NAME = libftprintf.a
 
 LIBFT_DIR = libft
 
-SRCS = \
+SRCS = ft_printf_utils/ft_check_conversion.c \
 	ft_printf_utils/ft_printf.c \
+	ft_printf_utils/ft_put_hex.c \
 	ft_printf_utils/ft_put_unsigned.c \
 	ft_printf_utils/ft_put_void_pointer.c \
 	ft_printf_utils/ft_putchar.c \
 	ft_printf_utils/ft_putnbr_base.c \
-	ft_printf_utils/ft_putnbr.c \
-	ft_printf_utils/ft_putstr.c \
 	ft_printf_utils/ft_putnbr_hex.c \
-	ft_printf_utils/ft_put_hex.c \
-	ft_printf_utils/ft_check_conversion.c
+	ft_printf_utils/ft_putnbr.c \
+	ft_printf_utils/ft_putstr.c
+
+BONUS_SRCS = \
+	ft_printf_utils_bonus/ft_printf_bonus.c \
+	ft_printf_utils_bonus/ft_put_unsigned_bonus.c \
+	ft_printf_utils_bonus/ft_put_void_pointer_bonus.c \
+	ft_printf_utils_bonus/ft_putchar_bonus.c \
+	ft_printf_utils_bonus/ft_putnbr_base_bonus.c \
+	ft_printf_utils_bonus/ft_putnbr_bonus.c \
+	ft_printf_utils_bonus/ft_putstr_bonus.c \
+	ft_printf_utils_bonus/ft_putnbr_hex_bonus.c \
+	ft_printf_utils_bonus/ft_put_hex_bonus.c \
+	ft_printf_utils_bonus/ft_check_conversion_bonus.c \
+	ft_printf_utils_bonus/ft_putnbr_str_bonus.c
 
 OBJ = $(SRCS:.c=.o)
-INCLUDES = ft_printf.h
+BONUS_OBJ = $(BONUS_SRCS:.c=.o)
+INCLUDES = ft_printf_utils/includes/ft_printf.h
+BONUS_INCLUDES = ft_printf_utils_bonus/includes/ft_printf_bonus.h
 FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
@@ -23,14 +37,15 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	make -C $(LIBFT_DIR)
 	cp $(LIBFT_DIR)/libft.a $(NAME)
+	ar rc $(NAME) $(OBJ)
 
-%.o: %.c ft_printf.h
+%.o: %.c $(INCLUDES)
 	$(CC) $(FLAGS) -c $< -o $@
 	ar rc $(NAME) $@
 
 clean :
 	make -C $(LIBFT_DIR) clean
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean : clean
 	make -C $(LIBFT_DIR) fclean
@@ -38,9 +53,7 @@ fclean : clean
 
 re : fclean all
 
-bonus: $(OBJ)
-	make -C $(LIBFT_DIR)
-	cp $(LIBFT_DIR)/libft.a $(NAME)
-	ar rc $(NAME) $(OBJ)
+bonus: $(BONUS_OBJ)
+	ar rc $(NAME) $(BONUS_OBJ)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
