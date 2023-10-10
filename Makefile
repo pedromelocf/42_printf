@@ -28,8 +28,7 @@ BONUS_SRCS = \
 
 OBJ = $(SRCS:.c=.o)
 BONUS_OBJ = $(BONUS_SRCS:.c=.o)
-INCLUDES = ft_printf_utils/includes/ft_printf.h
-BONUS_INCLUDES = ft_printf_utils_bonus/includes/ft_printf_bonus.h
+INCLUDES = ft_printf_utils/includes/ft_printf.h ft_printf_utils_bonus/includes/ft_printf_bonus.h
 FLAGS = -Wall -Werror -Wextra
 
 all: $(NAME)
@@ -40,7 +39,7 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 %.o: %.c $(INCLUDES)
-	$(CC) $(FLAGS) -Ift_printf_utils/includes -c $< -o $@
+	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
 	make -C $(LIBFT_DIR) clean
