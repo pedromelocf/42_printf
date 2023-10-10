@@ -1,7 +1,15 @@
 # 42_printf
+
+<div align="center">
+
 The goal of this project is pretty straightforward. You will recode printf(). You will mainly learn about using a variable number of arguments. How cool is that?? It is actually pretty cool :)
 
 ![](https://komarev.com/ghpvc/?username=pedromelocf)
+
+<h3> This is the Project Link: </h3> 
+https://github.com/users/pedromelocf/projects/4
+
+</div>
 
 ## 1. Challenges
 <h3>The biggests challenges in ft_printf recode function, in my opinion, are three:</h3>
