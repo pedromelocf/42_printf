@@ -29,7 +29,6 @@ BONUS_SRCS = \
 
 OBJ = $(SRCS:.c=.o)
 BONUS_OBJ = $(BONUS_SRCS:.c=.o)
-INCLUDES = ft_printf_utils/includes/ft_printf.h ft_printf_utils_bonus/includes/ft_printf_bonus.h
 FLAGS = -Wall -Werror -Wextra
 MAKEFLAG += make --no-print-directory
 
@@ -41,7 +40,7 @@ all: libft $(NAME)
 
 $(NAME): $(OBJ)
 	cp $(LIBFT_DIR)/libft.a $(NAME)
-	ar rcs $(NAME) $@
+	ar rcs $(NAME) $(OBJ)
 
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
