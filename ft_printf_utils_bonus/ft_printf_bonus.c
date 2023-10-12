@@ -6,13 +6,13 @@
 /*   By: pmelo-ca <pmelo-ca@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 14:50:49 by pmelo-ca          #+#    #+#             */
-/*   Updated: 2023/10/10 12:36:27 by pmelo-ca         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:00:10 by pmelo-ca         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/ft_printf_bonus.h"
 
-int	ft_printf_bonus(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	short int	i;
 	int			length;
