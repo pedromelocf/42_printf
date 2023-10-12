@@ -1,6 +1,7 @@
 NAME = libftprintf.a
 
 LIBFT_DIR = libft
+LIBFT_PATH = ./libft/*.o ./libft/*.a
 
 SRCS = ft_printf_utils/ft_check_conversion.c \
 	ft_printf_utils/ft_printf.c \
@@ -42,11 +43,9 @@ $(NAME): $(OBJ)
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
-	make -C $(LIBFT_DIR) clean
-	rm -f $(OBJ) $(BONUS_OBJ)
+	rm -rf $(OBJ) $(BONUS_OBJ) $(LIBFT_PATH)
 
 fclean : clean
-	make -C $(LIBFT_DIR) fclean
 	rm -f $(NAME)
 
 re : fclean all
