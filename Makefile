@@ -31,28 +31,33 @@ OBJ = $(SRCS:.c=.o)
 BONUS_OBJ = $(BONUS_SRCS:.c=.o)
 INCLUDES = ft_printf_utils/includes/ft_printf.h ft_printf_utils_bonus/includes/ft_printf_bonus.h
 FLAGS = -Wall -Werror -Wextra
+MAKEFLAG += make --no-print-directory
 
-all: $(NAME)
+ifdef WITH_BONUS
+	OBJ = $(BONUS_OBJ)
+endif
+
+all: libft $(NAME)
 
 $(NAME): $(OBJ)
-	make -C $(LIBFT_DIR)
 	cp $(LIBFT_DIR)/libft.a $(NAME)
-	ar rc $(NAME) $(OBJ)
+	ar rcs $(NAME) $@
 
-%.o: %.c $(INCLUDES)
+%.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean :
-	rm -rf $(OBJ) $(BONUS_OBJ) $(LIBFT_PATH)
+	rm -f $(OBJ) $(BONUS_OBJ) $(LIBFT_PATH)
 
 fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
 
-bonus: $(BONUS_OBJ)
-	make -C $(LIBFT_DIR)
-	cp $(LIBFT_DIR)/libft.a $(NAME)
-	ar rc $(NAME) $(BONUS_OBJ)
+bonus: $(if $(wildcard $(OBJ)), fclean)
+	$(MAKEFLAG) WITH_BONUS=TRUE
 
-.PHONY: all clean fclean re bonus
+libft :
+	$(MAKEFLAG) -C $(LIBFT_DIR)
+
+.PHONY: all clean fclean re bonus libft
