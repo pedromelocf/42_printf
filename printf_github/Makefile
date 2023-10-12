@@ -50,6 +50,9 @@ fclean : clean
 
 re : fclean all
 
-bonus: $(BONUS_OBJ) $(NAME)
+bonus: $(BONUS_OBJ)
+	make -C $(LIBFT_DIR)
+	cp $(LIBFT_DIR)/libft.a $(NAME)
+	ar rc $(NAME) $(BONUS_OBJ)
 
 .PHONY: all clean fclean re bonus
