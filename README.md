@@ -4,14 +4,16 @@
 
 The goal of this project is pretty straightforward. You will recode printf(). You will mainly learn about using a variable number of arguments. How cool is that?? It is actually pretty cool :)
 
-<p align="center">
-  <img src="https://github.com/pedromelocf/utilities/blob/master/ft_printfm.png" />
-</p>
+<img src="https://github.com/pedromelocf/utilities/blob/master/ft_printfm.png" />
 
 ![](https://komarev.com/ghpvc/?username=pedromelocf)
 
 <h3> This is the Project Link: </h3> 
 https://github.com/users/pedromelocf/projects/4
+
+<h2> Grade </h2>
+
+<img src="https://github.com/pedromelocf/utilities/blob/master/110_grade.png" />
 
 </div>
 
