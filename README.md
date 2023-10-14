@@ -4,6 +4,10 @@
 
 The goal of this project is pretty straightforward. You will recode printf(). You will mainly learn about using a variable number of arguments. How cool is that?? It is actually pretty cool :)
 
+<p align="center">
+  <img src="https://github.com/pedromelocf/utilities/blob/master/ft_printfm.png" />
+</p>
+
 ![](https://komarev.com/ghpvc/?username=pedromelocf)
 
 <h3> This is the Project Link: </h3> 
