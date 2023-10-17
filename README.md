@@ -8,8 +8,8 @@ The goal of this project is pretty straightforward. You will recode printf(). Yo
 
 ![](https://komarev.com/ghpvc/?username=pedromelocf)
 
-<h3> This is the Project Link: </h3> 
-https://github.com/users/pedromelocf/projects/4
+<h3> Check my article about this project: </h3> 
+https://pedromelodev.com/index.php/2023/10/17/recoding-printf-in-c-understanding-variadic-functions-stdargh/?_thumbnail_id=315
 
 <h2> Grade </h2>
 
